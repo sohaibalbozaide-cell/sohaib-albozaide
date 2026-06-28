@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أدعية بعد الصلاة | حصن الذاكر</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap');
+:root{
+  --parchment:#F6F1E4; --parchment-deep:#EFE7D2; --card:#FFFDF8;
+  --ink:#21302A; --ink-soft:#4B5C53; --emerald:#1B4332; --emerald-deep:#0E2920;
+  --gold:#A6792E; --gold-soft:#C9A968; --line:#DDD2B3;
+  --shadow:0 10px 30px -12px rgba(27,67,50,.18); --radius:18px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--parchment);
+  background-image:radial-gradient(circle at 12% 8%, rgba(166,121,46,.07), transparent 45%),
+                    radial-gradient(circle at 88% 92%, rgba(27,67,50,.07), transparent 45%);
+  color:var(--ink); font-family:'Tajawal',sans-serif; direction:rtl; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,.dhikr-text{font-family:'Amiri',serif;}
+a{color:inherit; text-decoration:none;}
+
+.topbar{position:sticky; top:0; z-index:50;
+  background:linear-gradient(180deg, rgba(246,241,228,.97), rgba(246,241,228,.88));
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:1080px; margin:0 auto; display:flex; align-items:center;
+  justify-content:space-between; padding:14px 22px; flex-wrap:wrap; gap:10px;}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--emerald-deep);}
+.brand .mark{width:28px; height:28px; flex-shrink:0;}
+.brand .name{font-family:'Amiri',serif; font-size:1.18rem;}
+.nav-links{display:flex; gap:6px; flex-wrap:wrap;}
+.nav-links a{font-size:.88rem; font-weight:500; color:var(--ink-soft);
+  padding:7px 13px; border-radius:999px; transition:.25s;}
+.nav-links a:hover, .nav-links a.active{background:var(--emerald); color:#fff;}
+.nav-links a.active{font-weight:700;}
+
+.page-hero{max-width:820px; margin:42px auto 6px; padding:0 22px; text-align:center;}
+.page-hero .eyebrow{display:inline-block; font-size:.78rem; letter-spacing:.06em;
+  color:var(--gold); font-weight:700; margin-bottom:8px;}
+.page-hero h1{font-size:clamp(1.9rem,4.5vw,2.6rem); color:var(--emerald-deep); margin:0 0 12px;}
+.page-hero p{color:var(--ink-soft); font-size:1rem; max-width:620px; margin:0 auto;}
+
+.divider{width:100%; height:24px; margin:26px auto 4px; max-width:260px;
+  background-repeat:repeat-x; background-position:center; background-size:24px 24px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Cg fill='none' stroke='%23A6792E' stroke-width='1.1' opacity='.55'%3E%3Cpath d='M13 1 L25 13 L13 25 L1 13 Z'/%3E%3Ccircle cx='13' cy='13' r='3.4'/%3E%3C/g%3E%3C/svg%3E");
+  opacity:.85;}
+
+.intro-box{max-width:740px; margin:18px auto 30px; padding:16px 22px;
+  background:var(--parchment-deep); border-right:4px solid var(--gold);
+  border-radius:10px; color:var(--ink-soft); font-size:.94rem;}
+
+.container{max-width:820px; margin:0 auto; padding:0 22px 70px;}
+.section-title{font-size:1.32rem; color:var(--emerald-deep); margin:38px 0 14px;
+  display:flex; align-items:center; gap:10px;}
+.section-title .tag{font-family:'Tajawal',sans-serif; font-weight:700; font-size:.66rem;
+  background:var(--emerald); color:#fff; padding:4px 10px; border-radius:999px;}
+
+.dhikr-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:20px 22px; margin-bottom:14px; box-shadow:var(--shadow); position:relative; overflow:hidden;}
+.dhikr-card::before{content:""; position:absolute; right:0; top:0; bottom:0; width:5px;
+  background:linear-gradient(180deg, var(--gold-soft), var(--emerald));}
+.dhikr-text{font-size:1.14rem; line-height:2.05; color:var(--ink); margin:0 0 10px;}
+.dhikr-meta{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
+.repeat-badge{font-size:.8rem; font-weight:700; color:var(--emerald-deep);
+  background:rgba(27,67,50,.08); padding:5px 12px; border-radius:999px;}
+.dhikr-note{font-size:.83rem; color:var(--ink-soft);}
+
+.tasbih-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:16px;}
+.tasbih-pill{flex:1; min-width:140px; background:var(--card); border:1px solid var(--line);
+  border-radius:14px; padding:16px; text-align:center; box-shadow:var(--shadow);}
+.tasbih-pill .word{font-family:'Amiri',serif; font-size:1.2rem; color:var(--emerald-deep);}
+.tasbih-pill .count{display:block; margin-top:6px; font-weight:700; color:var(--gold);}
+
+.page-nav{max-width:820px; margin:26px auto 0; padding:0 22px;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+.page-nav a{flex:1; min-width:150px; text-align:center; padding:13px 14px;
+  background:var(--emerald-deep); color:#fff; border-radius:14px; font-weight:700;
+  transition:transform .2s, background .2s; font-size:.92rem;}
+.page-nav a:hover{background:var(--emerald); transform:translateY(-2px);}
+.page-nav a.home-link{background:var(--gold); color:#231a0c;}
+.page-nav a.home-link:hover{background:var(--gold-soft);}
+
+footer.site-footer{text-align:center; padding:30px 18px 40px; color:var(--ink-soft);
+  font-size:.85rem; border-top:1px solid var(--line); margin-top:46px;}
+footer.site-footer strong{color:var(--emerald-deep);}
+footer.site-footer .credit-line{margin-top:6px;}
+
+@media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#A6792E" stroke-width="1.4"><path d="M12 3 L20 9 V21 H4 V9 Z"/><path d="M9 21 V13 H15 V21"/></svg>
+      <span class="name">حصن الذاكر</span>
+    </a>
+    <div class="nav-links">
+      <a href="azkar-sabah-masaa.html">أذكار الصباح والمساء</a>
+      <a href="adiya-baad-salah.html" class="active">أدعية بعد الصلاة</a>
+      <a href="ruqya-shariyya.html">الرقية الشرعية</a>
+      <a href="azkar-qabl-alnawm.html">قبل النوم وآداب المسلم</a>
+    </div>
+  </div>
+</div>
+
+<div class="page-hero">
+  <span class="eyebrow">دبر كل صلاة</span>
+  <h1>أدعية بعد الصلاة</h1>
+  <p>أذكار وأدعية ثابتة تُقال بعد السلام من كل صلاة مفروضة، فيها استغفار وتسبيح وتحصين.</p>
+</div>
+<div class="divider"></div>
+
+<div class="intro-box">
+  كان النبي ﷺ إذا انصرف من صلاته استغفر وذكر الله بصيغ ثابتة، وحثّ أصحابه على المداومة عليها، وجعل لها فضلًا عظيمًا في غفران الذنوب ودفع الشرّ.
+</div>
+
+<div class="container">
+
+  <div class="section-title"><span class="tag">١</span> الاستغفار والتنزيه</div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">أول ما يُقال بعد السلام من الصلاة</span>
+      <span class="repeat-badge">٣ مرات</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">اللَّهُمَّ أَنْتَ السَّلَامُ، وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">يلي الاستغفار مباشرة</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="tag">٢</span> التوحيد والتعظيم</div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ، لَا إِلٰهَ إِلَّا اللَّهُ، وَلَا نَعْبُدُ إِلَّا إِيَّاهُ، لَهُ النِّعْمَةُ وَلَهُ الْفَضْلُ وَلَهُ الثَّنَاءُ الْحَسَنُ، لَا إِلٰهَ إِلَّا اللَّهُ مُخْلِصِينَ لَهُ الدِّينَ وَلَوْ كَرِهَ الْكَافِرُونَ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">من كلمات التوحيد الجامعة بعد الصلاة</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ، وَلَا مُعْطِيَ لِمَا مَنَعْتَ، وَلَا رَادَّ لِمَا قَضَيْتَ، وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">إقرار بأن العطاء والمنع كلّه بيد الله وحده</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="tag">٣</span> التسبيح بعد الصلاة (٣٣، ٣٣، ٣٤)</div>
+
+  <div class="tasbih-row">
+    <div class="tasbih-pill"><span class="word">سُبْحَانَ اللَّهِ</span><span class="count">٣٣ مرة</span></div>
+    <div class="tasbih-pill"><span class="word">الْحَمْدُ لِلَّهِ</span><span class="count">٣٣ مرة</span></div>
+    <div class="tasbih-pill"><span class="word">اللَّهُ أَكْبَرُ</span><span class="count">٣٤ مرة</span></div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">لَا إِلٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">تُقال لتمام المائة بعد التسبيح والتحميد والتكبير، وهي سبب لغفران الذنوب</span>
+      <span class="repeat-badge">مرة واحدة لتمام المئة</span>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="tag">٤</span> آيات تُقرأ بعد الصلاة</div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">اللَّهُ لَا إِلٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ...</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">آية الكرسي — من قرأها بعد كل صلاة لم يمنعه من دخول الجنة إلا الموت</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">قُلْ هُوَ اللَّهُ أَحَدٌ — قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ — قُلْ أَعُوذُ بِرَبِّ النَّاسِ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">سورة الإخلاص والمعوذتان، وتُكرَّر ٣ مرات خاصة بعد الفجر والمغرب</span>
+      <span class="repeat-badge">مرة واحدة (٣ بعد الفجر والمغرب)</span>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="tag">٥</span> أدعية جامعة</div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">وصّى به النبي ﷺ معاذ بن جبل أن لا يدعه دبر كل صلاة</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">رَبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ وَاجْعَلْ لِي مِنْ لَدُنْكَ سُلْطَانًا نَصِيرًا</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">دعاء بالثبات على الصدق في القول والعمل</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-nav">
+  <a href="index.html" class="home-link">↩ الصفحة الرئيسية</a>
+  <a href="azkar-sabah-masaa.html">أذكار الصباح والمساء ←</a>
+  <a href="ruqya-shariyya.html">الرقية الشرعية ←</a>
+  <a href="azkar-qabl-alnawm.html">قبل النوم وآداب المسلم ←</a>
+</div>
+
+<footer class="site-footer">
+  <div>حصن الذاكر — موقع إسلامي بسيط لأذكار وآداب المسلم</div>
+  <div class="credit-line">عمل المهندس <strong>صهيب محمد البوزيدي</strong> © 2026</div>
+  <div class="credit-line">تحت إشراف الدكتور <strong>فرج ذهيبة</strong></div>
+</footer>
+
+</body>
+</html>

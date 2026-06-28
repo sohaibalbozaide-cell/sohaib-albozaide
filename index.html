@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حصن الذاكر | اذكار وادعية واداب المسلم</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+:root{
+  --parchment: #F6F1E4;
+  --parchment-deep: #EFE7D2;
+  --card: #FFFDF8;
+  --ink: #21302A;
+  --ink-soft: #4B5C53;
+  --emerald: #1B4332;
+  --emerald-deep: #0E2920;
+  --gold: #A6792E;
+  --gold-soft: #C9A968;
+  --line: #DDD2B3;
+  --shadow: 0 10px 30px -12px rgba(27,67,50,.18);
+  --radius: 18px;
+}
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  background: var(--parchment);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(166,121,46,.07), transparent 45%),
+    radial-gradient(circle at 88% 92%, rgba(27,67,50,.07), transparent 45%);
+  color: var(--ink);
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.amiri, h1, h2, .site-title, .dua-sample{ font-family: 'Amiri', serif; }
+a{ color: inherit; text-decoration: none; }
+
+
+.topbar{
+  position: sticky; top:0; z-index: 50;
+  background: linear-gradient(180deg, rgba(246,241,228,.97), rgba(246,241,228,.88));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner{
+  max-width: 1080px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 22px; flex-wrap:wrap; gap:10px;
+}
+.brand{ display:flex; align-items:center; gap:10px; font-weight:700; color: var(--emerald-deep); }
+.brand .mark{ width:30px; height:30px; flex-shrink:0; }
+.brand .name{ font-family:'Amiri', serif; font-size:1.25rem; }
+.nav-links{ display:flex; gap:6px; flex-wrap:wrap; }
+.nav-links a{
+  font-size:.9rem; font-weight:500; color: var(--ink-soft);
+  padding:8px 14px; border-radius:999px; transition: all .25s ease;
+}
+.nav-links a:hover{ background: var(--emerald); color:#fff; }
+
+ 
+.hero{ max-width: 880px; margin: 50px auto 10px; padding: 0 22px; text-align:center; }
+.hero .bismillah{ font-family:'Amiri', serif; font-size:1.3rem; color: var(--gold); margin-bottom:14px; }
+.hero h1{
+  font-size: clamp(2.1rem, 5vw, 3.1rem); color: var(--emerald-deep); margin:0 0 14px;
+}
+.hero p.lead{ color: var(--ink-soft); font-size:1.06rem; max-width:600px; margin:0 auto 8px; }
+
+.day-arc{ max-width: 760px; margin: 46px auto 10px; padding: 0 22px; }
+.day-arc svg{ width:100%; height:auto; display:block; }
+.day-arc-label{
+  display:flex; justify-content:space-between; max-width:620px; margin:6px auto 0; padding:0 30px;
+  font-size:.78rem; color: var(--ink-soft); font-weight:600;
+}
+
+
+.divider{
+  width:100%; height:26px; margin: 30px auto 6px; max-width:280px;
+  background-repeat: repeat-x; background-position:center; background-size: 26px 26px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Cg fill='none' stroke='%23A6792E' stroke-width='1.1' opacity='.55'%3E%3Cpath d='M13 1 L25 13 L13 25 L1 13 Z'/%3E%3Ccircle cx='13' cy='13' r='3.4'/%3E%3C/g%3E%3C/svg%3E");
+  opacity:.85;
+}
+
+
+.container{ max-width: 1000px; margin: 0 auto; padding: 0 22px 60px; }
+.cards-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:22px; margin-top: 30px;
+}
+@media (max-width: 700px){ .cards-grid{ grid-template-columns: 1fr; } }
+
+.card{
+  background: var(--card); border:1px solid var(--line); border-radius: var(--radius);
+  padding: 26px 26px 24px; box-shadow: var(--shadow); position:relative; overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  display:flex; flex-direction:column; gap:10px;
+}
+.card::before{
+  content:""; position:absolute; right:0; top:0; bottom:0; width:5px;
+  background: linear-gradient(180deg, var(--gold-soft), var(--emerald));
+}
+.card:hover{ transform: translateY(-4px); box-shadow: 0 16px 34px -14px rgba(27,67,50,.28); }
+.card .ic{ width:38px; height:38px; color: var(--gold); }
+.card h2{ font-size: 1.32rem; color: var(--emerald-deep); margin:6px 0 2px; }
+.card p{ color: var(--ink-soft); font-size:.93rem; margin:0; flex-grow:1; }
+.card .go{ font-size:.85rem; font-weight:700; color: var(--emerald); margin-top:8px; }
+
+
+.about-strip{
+  max-width: 760px; margin: 56px auto 0; padding: 22px 26px;
+  background: var(--parchment-deep); border-right: 4px solid var(--gold);
+  border-radius: 10px; color: var(--ink-soft); font-size:.95rem; text-align:center;
+}
+
+footer.site-footer{
+  text-align:center; padding: 34px 18px 44px; color: var(--ink-soft);
+  font-size:.86rem; border-top: 1px solid var(--line); margin-top: 50px;
+}
+footer.site-footer strong{ color: var(--emerald-deep); }
+footer.site-footer .credit-line{ margin-top:6px; }
+
+.fade-in{ animation: fadeIn .7s ease both; }
+@keyframes fadeIn{ from{opacity:0; transform: translateY(10px);} to{opacity:1; transform:none;} }
+@media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#A6792E" stroke-width="1.4"><path d="M12 3 L20 9 V21 H4 V9 Z"/><path d="M9 21 V13 H15 V21"/></svg>
+      <span class="name">حصن الذاكر</span>
+    </div>
+    <div class="nav-links">
+      <a href="azkar-sabah-masaa.html">أذكار الصباح والمساء</a>
+      <a href="adiya-baad-salah.html">أدعية بعد الصلاة</a>
+      <a href="ruqya-shariyya.html">الرقية الشرعية</a>
+      <a href="azkar-qabl-alnawm.html">قبل النوم وآداب المسلم</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero fade-in">
+  <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ</div>
+  <h1>حصن الذاكر</h1>
+  <p class="lead">رفقة يومك مع أذكار الصباح والمساء، وأدعية بعد الصلاة، والرقية الشرعية، وأذكار قبل النوم، وآداب المسلم في حياته.</p>
+  <p class="lead" style="font-size:.92rem;">"الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ" — سورة الرعد: 28</p>
+</div>
+
+
+<div class="day-arc">
+
+    <path d="M40,140 C 120,10 500,10 580,140" fill="none" stroke="#DDD2B3" stroke-width="2" stroke-dasharray="2 8"/>
+    <!-- صباح -->
+    <circle cx="100" cy="92" r="9" fill="#A6792E"/>
+    <!-- بعد الصلاة -->
+    <circle cx="230" cy="35" r="9" fill="#1B4332"/>
+    <!-- الرقية (في أي وقت) -->
+    <circle cx="390" cy="35" r="9" fill="#1B4332"/>
+    <!-- ليل -->
+    <circle cx="520" cy="92" r="9" fill="#0E2920"/>
+  </svg>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+  <div class="cards-grid">
+
+    <a class="card" href="azkar-sabah-masaa.html">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v3M12 19v3M4 12H1M23 12h-3M5 5l2 2M19 19l-2-2M5 19l2-2M19 5l-2 2"/></svg>
+      <h2>أذكار الصباح والمساء</h2>
+      <p>حصن يومي يحفظ القلب من الفجر إلى المساء، بآيات وأدعية ثابتة عن النبي ﷺ.</p>
+      <span class="go">ابدأ القراءة ←</span>
+    </a>
+
+    <a class="card" href="adiya-baad-salah.html">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3 L19 7 V17 L12 21 L5 17 V7 Z"/><path d="M9 12h6M12 9v6"/></svg>
+      <h2>أدعية بعد الصلاة</h2>
+      <p>التسبيح والاستغفار والأدعية المأثورة التي تُقال دبر كل صلاة مفروضة.</p>
+      <span class="go">ابدأ القراءة ←</span>
+    </a>
+
+    <a class="card" href="ruqya-shariyya.html">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 L20 6 V12 C20 17 16.5 20 12 22 C7.5 20 4 17 4 12 V6 Z"/><path d="M9 12l2 2 4-4"/></svg>
+      <h2>الرقية الشرعية</h2>
+      <p>آيات وأدعية صحيحة للاستشفاء بإذن الله من العين والسحر والمس وسائر الأذى.</p>
+      <span class="go">ابدأ القراءة ←</span>
+    </a>
+
+    <a class="card" href="azkar-qabl-alnawm.html">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5Z"/></svg>
+      <h2>أذكار قبل النوم وآداب المسلم</h2>
+      <p>ما يُقال عند النوم، وآداب الجلوس والاستماع والأكل والحديث في حياة المسلم اليومية.</p>
+      <span class="go">ابدأ القراءة ←</span>
+    </a>
+
+  </div>
+
+  <div class="about-strip">
+    مشروع الذكر  صمم ليكون مساعد للمسلمين وتذكير للذكر وتحصين للنفس اسأل الله ان يكون دخر لي ولي كل من قرئه ولمن علمني "صهيب البوزيدي " لاتنسوني من صالح دعائكم
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div>حصن الذاكر — موقع إسلامي بسيط لأذكار وآداب المسلم</div>
+  <div class="credit-line">عمل المهندس <strong>صهيب محمد البوزيدي</strong> © 2026</div>
+  <div class="credit-line">تحت إشراف الدكتور <strong>فرج ذهيبة</strong></div>
+</footer>
+
+</body>
+</html>

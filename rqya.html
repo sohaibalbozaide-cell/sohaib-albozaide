@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الرقية الشرعية | حصن الذاكر</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap');
+:root{
+  --parchment:#F6F1E4; --parchment-deep:#EFE7D2; --card:#FFFDF8;
+  --ink:#21302A; --ink-soft:#4B5C53; --emerald:#1B4332; --emerald-deep:#0E2920;
+  --gold:#A6792E; --gold-soft:#C9A968; --line:#DDD2B3;
+  --shadow:0 10px 30px -12px rgba(27,67,50,.18); --radius:18px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--parchment);
+  background-image:radial-gradient(circle at 12% 8%, rgba(166,121,46,.07), transparent 45%),
+                    radial-gradient(circle at 88% 92%, rgba(27,67,50,.07), transparent 45%);
+  color:var(--ink); font-family:'Tajawal',sans-serif; direction:rtl; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,.dhikr-text{font-family:'Amiri',serif;}
+a{color:inherit; text-decoration:none;}
+
+.topbar{position:sticky; top:0; z-index:50;
+  background:linear-gradient(180deg, rgba(246,241,228,.97), rgba(246,241,228,.88));
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:1080px; margin:0 auto; display:flex; align-items:center;
+  justify-content:space-between; padding:14px 22px; flex-wrap:wrap; gap:10px;}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--emerald-deep);}
+.brand .mark{width:28px; height:28px; flex-shrink:0;}
+.brand .name{font-family:'Amiri',serif; font-size:1.18rem;}
+.nav-links{display:flex; gap:6px; flex-wrap:wrap;}
+.nav-links a{font-size:.88rem; font-weight:500; color:var(--ink-soft);
+  padding:7px 13px; border-radius:999px; transition:.25s;}
+.nav-links a:hover, .nav-links a.active{background:var(--emerald); color:#fff;}
+.nav-links a.active{font-weight:700;}
+
+.page-hero{max-width:820px; margin:42px auto 6px; padding:0 22px; text-align:center;}
+.page-hero .eyebrow{display:inline-block; font-size:.78rem; letter-spacing:.06em;
+  color:var(--gold); font-weight:700; margin-bottom:8px;}
+.page-hero h1{font-size:clamp(1.9rem,4.5vw,2.6rem); color:var(--emerald-deep); margin:0 0 12px;}
+.page-hero p{color:var(--ink-soft); font-size:1rem; max-width:620px; margin:0 auto;}
+
+.divider{width:100%; height:24px; margin:26px auto 4px; max-width:260px;
+  background-repeat:repeat-x; background-position:center; background-size:24px 24px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Cg fill='none' stroke='%23A6792E' stroke-width='1.1' opacity='.55'%3E%3Cpath d='M13 1 L25 13 L13 25 L1 13 Z'/%3E%3Ccircle cx='13' cy='13' r='3.4'/%3E%3C/g%3E%3C/svg%3E");
+  opacity:.85;}
+
+.intro-box{max-width:740px; margin:18px auto 14px; padding:16px 22px;
+  background:var(--parchment-deep); border-right:4px solid var(--gold);
+  border-radius:10px; color:var(--ink-soft); font-size:.94rem;}
+
+.conditions-box{max-width:740px; margin:0 auto 30px; padding:18px 22px;
+  background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow);}
+.conditions-box h3{margin:0 0 10px; color:var(--emerald-deep); font-size:1.02rem; font-family:'Tajawal',sans-serif;}
+.conditions-box ul{margin:0; padding-right:1.2em; color:var(--ink-soft); font-size:.92rem;}
+.conditions-box li{margin-bottom:6px;}
+
+.container{max-width:820px; margin:0 auto; padding:0 22px 70px;}
+.section-title{font-size:1.32rem; color:var(--emerald-deep); margin:38px 0 14px;
+  display:flex; align-items:center; gap:10px;}
+.section-title .tag{font-family:'Tajawal',sans-serif; font-weight:700; font-size:.66rem;
+  background:var(--emerald); color:#fff; padding:4px 10px; border-radius:999px;}
+
+.dhikr-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:20px 22px; margin-bottom:14px; box-shadow:var(--shadow); position:relative; overflow:hidden;}
+.dhikr-card::before{content:""; position:absolute; right:0; top:0; bottom:0; width:5px;
+  background:linear-gradient(180deg, var(--gold-soft), var(--emerald));}
+.dhikr-text{font-size:1.14rem; line-height:2.05; color:var(--ink); margin:0 0 10px;}
+.dhikr-meta{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
+.repeat-badge{font-size:.8rem; font-weight:700; color:var(--emerald-deep);
+  background:rgba(27,67,50,.08); padding:5px 12px; border-radius:999px;}
+.dhikr-note{font-size:.83rem; color:var(--ink-soft);}
+
+.page-nav{max-width:820px; margin:26px auto 0; padding:0 22px;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+.page-nav a{flex:1; min-width:150px; text-align:center; padding:13px 14px;
+  background:var(--emerald-deep); color:#fff; border-radius:14px; font-weight:700;
+  transition:transform .2s, background .2s; font-size:.92rem;}
+.page-nav a:hover{background:var(--emerald); transform:translateY(-2px);}
+.page-nav a.home-link{background:var(--gold); color:#231a0c;}
+.page-nav a.home-link:hover{background:var(--gold-soft);}
+
+footer.site-footer{text-align:center; padding:30px 18px 40px; color:var(--ink-soft);
+  font-size:.85rem; border-top:1px solid var(--line); margin-top:46px;}
+footer.site-footer strong{color:var(--emerald-deep);}
+footer.site-footer .credit-line{margin-top:6px;}
+
+@media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#A6792E" stroke-width="1.4"><path d="M12 3 L20 9 V21 H4 V9 Z"/><path d="M9 21 V13 H15 V21"/></svg>
+      <span class="name">حصن الذاكر</span>
+    </a>
+    <div class="nav-links">
+      <a href="azkar-sabah-masaa.html">أذكار الصباح والمساء</a>
+      <a href="adiya-baad-salah.html">أدعية بعد الصلاة</a>
+      <a href="ruqya-shariyya.html" class="active">الرقية الشرعية</a>
+      <a href="azkar-qabl-alnawm.html">قبل النوم وآداب المسلم</a>
+    </div>
+  </div>
+</div>
+
+<div class="page-hero">
+  <span class="eyebrow">الشفاء بإذن الله</span>
+  <h1>الرقية الشرعية</h1>
+  <p>القراءة بالقرآن والأدعية النبوية الثابتة طلبًا للشفاء من العين والسحر والمسّ وسائر الأذى، مع اليقين بأن الشافي هو الله وحده.</p>
+</div>
+<div class="divider"></div>
+
+<div class="intro-box">
+  الرقية الشرعية هي قراءة آيات من القرآن أو أدعية ثابتة عن النبي ﷺ على المريض أو المصاب، رجاء الشفاء من الله. وهي سبب نافع بإذن الله، شرعها النبي ﷺ وأقرّها، ولا تتعارض مع التوكل على الله بل هي من تمامه.
+</div>
+
+<div class="conditions-box">
+  <h3>شروط الرقية الشرعية</h3>
+  <ul>
+    <li>أن تكون بكلام الله تعالى، أو بأسمائه وصفاته، أو بما ثبت عن النبي ﷺ من الأدعية.</li>
+    <li>أن تكون بلغة عربية مفهومة المعنى، أو بما يُعرف معناه إن كانت بغيرها.</li>
+    <li>الاعتقاد الجازم بأن الرقية سبب لا تأثير لها بذاتها، وأن الشافي هو الله وحده.</li>
+    <li>تجوز الرقية بالنفث (نفخ خفيف مع قليل من الريق) على موضع الألم أو على الراقي نفسه.</li>
+  </ul>
+</div>
+
+<div class="container">
+
+  <div class="section-title"><span class="tag">١</span> آيات الشفاء الكبرى</div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ، الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ... (الفاتحة كاملة)</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">سورة الفاتحة — سمّاها النبي ﷺ "الرُّقية"</span>
+      <span class="repeat-badge">١ – ٣ مرات</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">اللَّهُ لَا إِلٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ...</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">آية الكرسي — من أعظم آيات الحفظ والحماية</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ... إلى ختام سورة البقرة</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">آخر آيتين من سورة البقرة — من قرأهما في ليلة كفتاه</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">قُلْ هُوَ اللَّهُ أَحَدٌ — قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ — قُلْ أَعُوذُ بِرَبِّ النَّاسِ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">سورة الإخلاص والمعوذتان — كان النبي ﷺ يرقي بها نفسه عند المرض</span>
+      <span class="repeat-badge">٣ مرات</span>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="tag">٢</span> أدعية الرقية النبوية</div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">بِسْمِ اللَّهِ أَرْقِيكَ، وَاللَّهُ يَشْفِيكَ، مِنْ كُلِّ دَاءٍ فِيكَ، مِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ، وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">رقية يقولها الراقي على المريض</span>
+      <span class="repeat-badge">٣ مرات</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">تحصين عام من كل مخلوق يؤذي</span>
+      <span class="repeat-badge">٣ مرات</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَاسَ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">دعاء النبي ﷺ عند زيارة المريض، مع وضع اليد على موضع الألم</span>
+      <span class="repeat-badge">٣ مرات</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">بِسْمِ اللَّهِ، (٣ مرات) أَعُوذُ بِعِزَّةِ اللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">يقال مع وضع اليد على موضع الألم — رقية لمن يشعر بألم في جسده</span>
+      <span class="repeat-badge">٧ مرات</span>
+    </div>
+  </div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-text">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ، الَّتِي لَا يُجَاوِزُهُنَّ بَرٌّ وَلَا فَاجِرٌ، مِنْ شَرِّ مَا خَلَقَ وَبَرَأَ وَذَرَأَ، وَمِنْ شَرِّ مَا يَنْزِلُ مِنَ السَّمَاءِ، وَمِنْ شَرِّ مَا يَعْرُجُ فِيهَا، وَمِنْ شَرِّ مَا ذَرَأَ فِي الْأَرْضِ، وَمِنْ شَرِّ مَا يَخْرُجُ مِنْهَا، وَمِنْ شَرِّ فِتَنِ اللَّيْلِ وَالنَّهَارِ، وَمِنْ شَرِّ كُلِّ طَارِقٍ إِلَّا طَارِقًا يَطْرُقُ بِخَيْرٍ يَا رَحْمٰنُ</p>
+    <div class="dhikr-meta">
+      <span class="dhikr-note">تحصين شامل من كل شرّ في الأرض والسماء، يُقرأ خاصة عند المساء</span>
+      <span class="repeat-badge">مرة واحدة</span>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="tag">٣</span> تنبيهات مهمة</div>
+
+  <div class="dhikr-card">
+    <p class="dhikr-note" style="font-size:.95rem;">الرقية الشرعية ليست بديلًا عن العلاج الطبي عند المرض العضوي، بل تُجمع معه. وكل رقية فيها استعانة بغير الله، أو ألفاظ غير مفهومة المعنى، أو طلاسم لا يُعرف أصلها، فهي ليست من الرقية الشرعية ويجب تركها. كذلك يُستحب الإكثار من الرقية الذاتية اليومية (أذكار الصباح والمساء) فهي أعظم حماية وقائية بإذن الله.</p>
+  </div>
+
+</div>
+
+<div class="page-nav">
+  <a href="index.html" class="home-link">↩ الصفحة الرئيسية</a>
+  <a href="azkar-sabah-masaa.html">أذكار الصباح والمساء ←</a>
+  <a href="adiya-baad-salah.html">أدعية بعد الصلاة ←</a>
+  <a href="azkar-qabl-alnawm.html">قبل النوم وآداب المسلم ←</a>
+</div>
+
+<footer class="site-footer">
+  <div>حصن الذاكر — موقع إسلامي بسيط لأذكار وآداب المسلم</div>
+  <div class="credit-line">عمل المهندس <strong>صهيب محمد البوزيدي</strong> © 2026</div>
+  <div class="credit-line">تحت إشراف الدكتور <strong>فرج ذهيبة</strong></div>
+</footer>
+
+</body>
+</html>
